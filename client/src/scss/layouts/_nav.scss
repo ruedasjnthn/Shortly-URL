@@ -1,0 +1,143 @@
+@use "abstract" as *;
+@use "base/colors" as c;
+
+.nav {
+  &__container {
+    @include container($width: calc(375px * 0.9));
+    display: flex;
+    align-items: center;
+    margin-top: 2em;
+    @include mq($width: $largescreen) {
+      @include container($width: 1110px);
+      margin-top: 3em;
+      flex-direction: row;
+    }
+  }
+
+  &__logo {
+    margin-right: calc((375px * 0.9) - 150px);
+    @include mq($width: $largescreen) {
+      margin-right: 3em;
+    }
+  }
+
+  &__icon {
+    color: c.$gray;
+    font-size: 30px;
+    cursor: pointer;
+    @include mq($width: $largescreen) {
+      display: none;
+    }
+  }
+
+  &__menu.active {
+    transition: all 0.5s ease;
+    z-index: 1;
+    opacity: 1;
+    @include mq($width: $largescreen) {
+      display: none;
+    }
+  }
+
+  &__menu {
+    position: absolute;
+    inset: 100px auto auto auto;
+    width: calc(375px * 0.9);
+    border-radius: 10px;
+    background-color: c.$darkViolet;
+    padding: 1.9em 0;
+    opacity: 0;
+    @include mq($width: $largescreen) {
+      display: flex;
+      background-color: c.$white;
+      position: static;
+      opacity: 1;
+      padding: 0;
+    }
+
+    ul {
+      padding: 0;
+      margin: 0;
+      @include mq($width: $largescreen) {
+        display: flex;
+        align-items: center;
+      }
+
+      & > * {
+        padding-bottom: 1.7em;
+        @include mq($width: $largescreen) {
+          padding: 0;
+        }
+      }
+
+      & > * + * {
+        @include mq($width: $largescreen) {
+          padding-left: 2em;
+        }
+      }
+    }
+  }
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    color: c.$white;
+    text-decoration: none;
+    @include mq($width: $largescreen) {
+      color: c.$grayishViolet;
+    }
+    
+    &:hover {
+      color: c.$cyan;
+      cursor: pointer;
+      @include mq($width: $largescreen) {
+        color: c.$darkerBlue;
+      }
+    }
+  }
+
+  &__sign {
+    display: flex;
+    flex-direction: column;
+    color: c.$white;
+    @include mq($width: $largescreen) {
+      flex-direction: row;
+      align-items: center;
+      margin-left: 470px;
+    }
+
+    span {
+      text-align: center;
+      padding: 1.75em 0;
+      @include mq($width: $largescreen) {
+        color: c.$gray;
+        margin-right: 2em;
+      }
+
+      &::before {
+        content: "";
+        display: block;
+        @include mq($width: $largescreen) {
+          display: none;
+        }
+        width: 276px;
+        height: 1px;
+        background-color: c.$grayishViolet;
+        margin: 0 auto;
+        transform: translateY(-1.75em);
+      }
+
+      &:hover {
+        color: c.$cyan;
+        cursor: pointer;
+        @include mq($width: $largescreen) {
+          color: c.$darkerBlue;
+        }
+      }
+    }
+
+    button {
+      margin: 0 auto;
+    }
+  }
+}

@@ -1,0 +1,144 @@
+@use "abstract" as *;
+@use "base/colors" as c;
+
+//url shortener section
+.urlShortener {
+  background-color: c.$lightGray;
+
+  &__container {
+    position: relative;
+    transform: translateY(-89px);
+
+    //url generator
+    .urlShortener__generator {
+      display: grid;
+      justify-content: center;
+      @include container($width: calc(375px * 0.89));
+      background-repeat: no-repeat;
+      background-size: 245px 140px;
+      background-position: 95px 0;
+      background-color: c.$darkViolet;
+      height: auto;
+      border-radius: 10px;
+      padding: 1.5em 0;
+      @include mq($width: $largescreen) {
+        @include container($width: 1110px);
+        background-size: contain;
+        background-position: 0;
+        height: 168px;
+        padding-top: 3.25em;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        @include mq($width: $largescreen) {
+          flex-direction: row;
+        }
+      }
+
+      .input-container {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .inputUrl,
+      .inputError {
+        width: 280px;
+        height: 53px;
+        border-radius: 5px;
+        border: none;
+        outline: none;
+        padding: 0 1em;
+        margin: 0;
+        @include mq($width: $largescreen) {
+          width: 769px;
+          height: 64px;
+          margin-right: 1.5em;
+        }
+      }
+
+      .inputUrl:focus {
+        border: 3px solid c.$darkerBlue;
+      }
+
+      .inputError {
+        border: 2px solid c.$red;
+        &::placeholder {
+          color: c.$red;
+          opacity: 0.5;
+        }
+
+        &:focus {
+          border: 3px solid c.$red;
+        }
+      }
+
+      .input-error {
+        color: c.$red;
+        padding: 0.5em 0 1.5em;
+      }
+    }
+
+    //url result
+    .displayResult {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      @include container($width: calc(375px * 0.89));
+      background-color: c.$white;
+      border-radius: 10px;
+      margin-top: 1em;
+      padding-bottom: 1em;
+      @include mq($width: $largescreen) {
+        flex-direction: row;
+        @include container($width: 1110px);
+        padding: 0 1.5em;
+        margin-top: 2em;
+      }
+
+      .fullUrlResult,
+      .shortUrlResult {
+        min-width: 333.75px;
+        height: 53px;
+        padding: 15.6px 16.875px;
+        @include mq($width: $largescreen) {
+          height: 72px;
+          padding: 23.5px 0;
+          margin-left: 0;
+        }
+      }
+
+      .fullUrlResult {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        border-bottom: 1px solid c.$lightGray;
+        @include mq($width: $largescreen) {
+          min-width: 600px;
+         
+        }
+      }
+
+      .shortUrlResult {
+        color: c.$cyan;
+        a {
+          text-decoration: none;
+          color: c.$cyan;
+        }
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      
+      button {
+        margin: 0 auto;
+        @include mq($width: $largescreen) {
+          margin: auto 0 auto 0;
+        }
+      }
+    }
+  }
+}

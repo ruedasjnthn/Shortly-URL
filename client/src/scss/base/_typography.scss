@@ -1,0 +1,111 @@
+@use "colors" as c;
+@use "abstract" as *;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap");
+
+/* font-style */
+$font-family: "Poppins", sans-serif;
+
+/* font-weight */
+$fw-regular: 500;
+$fw-bold: 700;
+
+body {
+  font-family: $font-family;
+  font-weight: $fw-regular;
+}
+
+.nav {
+  &__item,
+  &__sign {
+    font-size: 18px;
+    font-weight: $fw-bold;
+    @include mq($width: $largescreen) {
+      font-size: 15px;
+    }
+  }
+}
+
+.header {
+  &__title {
+    font-weight: $fw-bold;
+    font-size: 40px;
+    line-height: 1.125;
+    @include mq($width: $largescreen) {
+      font-size: 80px;
+    }
+  }
+
+  &__desc {
+    font-size: 18px;
+    line-height: 1.6;
+    @include mq($width: $largescreen) {
+      font-size: 23px;
+    }
+  }
+}
+
+.urlShortener {
+  .input-error {
+    font-style: italic;
+    font-size: 12px;
+    @include mq($width: $largescreen) {
+      font-size: 16px;
+    }
+  }
+
+  .fullUrlResult,
+  .shortUrlResult {
+    font-size: 16px;
+    @include mq($width: $largescreen) {
+      font-size: 18px;
+    }
+  }
+}
+
+.stat {
+  &__heading {
+    font-size: 28px;
+    @include mq($width: $largescreen) {
+      font-size: 40px;
+    }
+  }
+
+  &__subheading {
+    font-size: 16px;
+    line-height: 1.6;
+    @include mq($width: $largescreen) {
+      font-size: 18px;
+      line-height: 1.8;
+    }
+  }
+
+  &__title {
+    font-size: 22px;
+  }
+
+  &__desc {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+}
+
+.cta {
+  &__title {
+    font-size: 28px;
+    @include mq($width: $largescreen) {
+      font-size: 40px;
+    }
+  }
+}
+
+.footer {
+  &__link-title {
+    font-size: 20px;
+    font-weight: $fw-bold;
+  }
+
+  &__link {
+    color: c.$lightGray;
+    font-size: 18px;
+  }
+}

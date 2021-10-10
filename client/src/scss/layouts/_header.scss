@@ -1,0 +1,64 @@
+@use "abstract" as *;
+@use "base/colors" as c;
+
+body {
+  overflow-x: hidden;
+}
+
+//header section
+.header {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    @include container($width: 375px);
+    padding-bottom: 12em;
+    @include mq($width: $largescreen) {
+      @include container($width: 1110px);
+      flex-direction: row-reverse;
+      justify-content: left;
+    }
+  }
+
+  &__main {
+    display: grid;
+    button {
+      margin: 0 auto;
+      @include mq($width: $largescreen) {
+        margin-left: 0;
+      }
+    }
+  }
+
+  &__img {
+    height: 330px;
+    margin-top: 2em;
+    object-fit: cover;
+    object-position: 22px 0;
+    @include mq($width: $largescreen) {
+      margin-left: 2em;
+      height: 482px;
+      width: 733px;
+      object-position: 0;
+    }
+  }
+
+  &__title,
+  &__desc {
+    text-align: center;
+    @include container($width: calc(375px * 0.9));
+    margin-top: 0.75em;
+    @include mq($width: $largescreen) {
+      text-align: left;
+      min-width: 615px;
+    }
+  }
+
+  &__title {
+    margin-top: 1em;
+  }
+
+  &__desc {
+    margin-bottom: 1em;
+    color: c.$grayishViolet;
+  }
+}

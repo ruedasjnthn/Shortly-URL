@@ -1,0 +1,81 @@
+@use "base/typography" as *;
+@use "base/colors" as c;
+@use "abstract" as *;
+
+.btn {
+  font-weight: $fw-bold;
+  background-color: c.$cyan;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: c.$hoverCyan;
+  }
+}
+
+.btn--curved {
+  color: c.$white;
+  border-radius: 2.25em;
+}
+
+.btn--edged {
+  color: c.$white;
+  border-radius: 5px;
+}
+
+.btn--signUp {
+  width: 286px;
+  height: 45px;
+  font-size: 15px;
+  @include mq($width: $largescreen) {
+    width: 105px;
+    height: 40px;
+  }
+}
+
+.btn--signUp {
+  width: 286px;
+  height: 45px;
+  font-size: 15px;
+  @include mq($width: $largescreen) {
+    width: 105px;
+    height: 40px;
+  }
+}
+
+.btn--getStarted {
+  width: 197px;
+  height: 56px;
+  font-size: 20px;
+}
+
+.btn--copy,
+.btn--copied {
+  width: 300px;
+  height: 50px;
+  font-size: 16px;
+  @include mq($width: $largescreen) {
+    width: 102px;
+    height: 40px;
+    font-size: 18px;
+  }
+}
+
+.btn--copied {
+  background-color: c.$darkViolet;
+
+  &:hover {
+    background-color: c.$darkViolet
+  }
+}
+
+.btn--shorten {
+  width: 280px;
+  height: 53px;
+  font-size: 18px;
+  @include mq($width: $largescreen) {
+    width: 188px;
+    height: 64px;
+    font-size: 20px;
+  }
+}

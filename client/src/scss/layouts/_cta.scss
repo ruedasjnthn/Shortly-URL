@@ -1,0 +1,30 @@
+@use 'abstract' as *;
+@use 'base/colors' as c;
+
+.cta {
+  background-color: c.$darkViolet;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 450px 300px;
+  @include mq($width: 376px) {
+    background-size: cover;
+  }
+
+  &__container {
+    display: grid;
+    align-items: center;
+    padding: 6em 0;
+    @include mq($width: $largescreen) {
+      padding: 61px 0;
+    }
+  }
+  &__title {
+    text-align: center;
+    color: c.$white;
+    margin-bottom: 0.5em;
+  }
+
+  button {
+    margin: 0 auto;
+  }
+}
