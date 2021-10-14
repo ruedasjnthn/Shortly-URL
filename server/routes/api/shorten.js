@@ -12,7 +12,7 @@ router.get("/test", (req, res) => res.json({ msg: "API is working" }));
 // @route GET /api/shorten/
 router.post("/", async (req, res) => {
   const shortCode = shortid.generate();
-  const baseUrl = "http://localhost:1234";
+  const baseUrl = "https://shrtly-02.herokuapp.com";
   const full = req.body.full;
   const short = baseUrl + '/' + shortCode;
 
