@@ -1,71 +1,79 @@
-@use 'abstract/mixins' as *;
-@use 'base/colors' as c;
+@use "abstract/mixins" as *;
+@use "base/colors" as c;
 
 .footer {
-    background-color: c.$darkerViolet;
+  background-color: c.$darkerViolet;
 
-    &__container {
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        color: c.$white;
-        padding: 4.5em 0;
-        @include mq($width: $largescreen) {
-            @include container($width: 1110px );
-            flex-direction: row;
-        }
+  &__container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    color: c.$white;
+    padding: 4.5em 0;
+    @include mq($width: $largescreen) {
+      @include container($width: 1110px);
+      flex-direction: row;
     }
+  }
 
-    &__container > * + * + * {
-        margin-left: 68px;
+  &__container > * + * + * {
+    @include mq($width: $largescreen) {
+      margin-left: 68px;
     }
+  }
 
-    &__logo {
-        margin: 0 230px 0 0;
-        fill: hsl(0, 0%, 100%);
-        &:hover {
-            fill: c.$cyan
-        }
+  &__logo {
+    margin: 0 auto 40px;
+    fill: hsl(0, 0%, 100%);
+    &:hover {
+      fill: c.$cyan;
     }
-    
-    &__link-container {
-       text-align: left; 
-       ul {
-           padding: 0;
-       }
+    @include mq($width: $largescreen) {
+      margin: 0 230px 0 0;
     }
+  }
 
-    &__linkList {
-        margin: 2em auto 2.5em;
-        @include mq($width: $largescreen) {
-            margin: 2em auto 0;
-        }
+  &__link-container {
+    @include mq($width: $largescreen) {
+      text-align: left;
+      ul {
+        padding: 0;
+      }
     }
+  }
 
-    &__linkList > * + * {
-        margin-top: 0.75em;
+  &__linkList {
+    margin: 2em auto 2.5em;
+    padding: 0;
+    @include mq($width: $largescreen) {
+      margin: 2em auto 0;
     }
+  }
 
-    &__link {
-        color: c.$gray;
+  &__linkList > * + * {
+    margin-top: 0.75em;
+  }
 
-        &:hover {
-            color: c.$cyan;
-            fill: c.$cyan;
-            cursor: pointer;
-        }
+  &__link {
+    color: c.$gray;
+
+    &:hover {
+      color: c.$cyan;
+      fill: c.$cyan;
+      cursor: pointer;
     }
+  }
 
-    &__socialLinks {
-        display: flex;
-        justify-content: center;
-        fill: c.$white;
-        @include mq($width: $largescreen) {
-            margin: 0;
-        }
+  &__socialLinks {
+    display: flex;
+    justify-content: center;
+    fill: c.$white;
+    @include mq($width: $largescreen) {
+      margin: 0;
     }
+  }
 
-    &__socialLinks > * + * {
-        margin-left: 2em;
-    }
+  &__socialLinks > * + * {
+    margin-left: 2em;
+  }
 }

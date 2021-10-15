@@ -181,11 +181,9 @@ const UrlShortener = () => {
             return (
               <div key={result.id} className="displayResult">
                 <span className="fullUrlResult">{result.full}</span>
-                <span className="shortUrlResult">
-                  <a href={result.short} target="_blank">
+                <a className="shortUrlResult" href={result.short} target="_blank">
                     {result.short}
                   </a>
-                </span>
                 <Button
                   onClick={() => handleCopy(result.id, result.short)}
                   buttonStyle="btn--edged"

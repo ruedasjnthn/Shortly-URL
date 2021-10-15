@@ -100,9 +100,12 @@
 
       .fullUrlResult,
       .shortUrlResult {
-        min-width: 333.75px;
+        min-width: 300px;
         height: 53px;
         padding: 15.6px 16.875px;
+        overflow: hidden; 
+        white-space: nowrap;
+        text-overflow: ellipsis;
         @include mq($width: $largescreen) {
           height: 72px;
           padding: 23.5px 0;
@@ -111,28 +114,26 @@
       }
 
       .fullUrlResult {
+        color: c.$darkViolet;
         white-space: nowrap;
         overflow: hidden;
-        text-overflow: ellipsis;
         border-bottom: 1px solid c.$lightGray;
         @include mq($width: $largescreen) {
           min-width: 600px;
-         
         }
       }
 
       .shortUrlResult {
         color: c.$cyan;
-        a {
-          text-decoration: none;
-          color: c.$cyan;
-        }
+        text-decoration: none;
+        color: c.$cyan;
+        width: auto;
 
         &:hover {
           text-decoration: underline;
         }
       }
-      
+
       button {
         margin: 0 auto;
         @include mq($width: $largescreen) {
