@@ -6,6 +6,9 @@
 
   &__container {
     padding-bottom: 5em;
+    @include mq($width: $largescreen) {
+      padding-bottom: 84px;
+    }
   }
 
   &__content-container {
@@ -111,9 +114,6 @@
 
   &__heading {
     margin-bottom: 0.5em;
-    @include mq($width: $largescreen) {
-      padding-top: 1.5em;
-    }
   }
 
   &__subheading {

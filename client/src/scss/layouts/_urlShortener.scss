@@ -119,7 +119,7 @@
         overflow: hidden;
         border-bottom: 1px solid c.$lightGray;
         @include mq($width: $largescreen) {
-          min-width: 600px;
+          min-width: 565px;
         }
       }
 
@@ -128,9 +128,11 @@
         text-decoration: none;
         color: c.$cyan;
         width: auto;
-
         &:hover {
           text-decoration: underline;
+        }
+        @include mq($width: $largescreen) {
+          margin: auto 24px;
         }
       }
 
