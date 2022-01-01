@@ -33,16 +33,6 @@
   }
 }
 
-.btn--signUp {
-  width: 286px;
-  height: 45px;
-  font-size: 15px;
-  @include mq($width: $largescreen) {
-    width: 105px;
-    height: 40px;
-  }
-}
-
 .btn--getStarted {
   width: 197px;
   height: 56px;
